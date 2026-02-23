@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pro Weather App</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  </head>
+  <body>
+    <div id="rainEffect" class="rain hidden"></div>
+<div id="snowEffect" class="snow hidden"></div>
+    <div class="app">
+      <div class="top-bar">
+        <h1>Weather Pro</h1>
+        <div class="controls">
+          <button onclick="toggleDarkMode()">🌙</button>
+          <button onclick="getLocation()">📍</button>
+          <!-- Unit Toggle -->
+          <div class="unit-toggle">
+            <button onclick="setUnit('metric')">°C</button>
+            <button onclick="setUnit('imperial')">°F</button>
+          </div>
+        </div>
+      </div>
+      <div class="search-box">
+        <input type="text" id="cityInput" placeholder="Enter city name" />
+        <button onclick="searchWeather()">Search</button>
+      </div>
+<div class="history">
+  <h3>Recent Searches</h3>
+  <ul id="historyList"></ul>
+</div>
+      <div id="loader" class="loader hidden"></div>
+
+      <div id="currentWeather" class="current hidden">
+        <h2 id="cityName"></h2>
+        <img id="icon" />
+        <h3 id="temp"></h3>
+        <p id="desc"></p>
+          <div class="chart-container">
+    <canvas id="hourlyChart"></canvas>
+  </div>
+        <div class="details">
+          <span>Humidity: <span id="humidity"></span>%</span>
+          <span>Wind: <span id="wind"></span> km/h</span>
+        </div>
+      </div>
+
+      <div id="forecast" class="forecast"></div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
